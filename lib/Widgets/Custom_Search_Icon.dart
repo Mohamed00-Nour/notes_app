@@ -10,7 +10,7 @@ final IconData icon;
       height: 47.0,
       decoration:  BoxDecoration(
         color: Colors.white.withOpacity(0.07),
-        borderRadius: BorderRadius.all(Radius.circular(16.0)),
+        borderRadius: const BorderRadius.all(Radius.circular(16.0)),
       ),
       child: Icon(
         icon,
