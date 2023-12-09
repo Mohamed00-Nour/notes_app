@@ -4,17 +4,22 @@ import '../Cubits/notes_list/notes_cubit.dart';
 import '../Models/Note_Model.dart';
 import '../Views/Edit_Note_View.dart';
 
-
 class NoteItem extends StatelessWidget {
   const NoteItem({super.key, required this.noteModel});
+
   final NoteModel noteModel;
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const EditNoteView()),
+          MaterialPageRoute(
+            builder: (context) =>  EditNoteView(
+              note: noteModel,
+            ),
+          ),
         );
       },
       child: Container(
@@ -26,14 +31,14 @@ class NoteItem extends StatelessWidget {
         width: double.infinity,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16.0),
-          color:  Color(noteModel.Color),
+          color: Color(noteModel.Color),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             ListTile(
-              title:  Text(
-                 noteModel.title,
+              title: Text(
+                noteModel.title,
                 style: const TextStyle(fontSize: 26.0, color: Colors.black),
               ),
               subtitle: Padding(
