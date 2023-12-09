@@ -49,9 +49,13 @@ class _AddNoteFormState extends State<AddNoteForm> {
             maxLines: 5,
           ),
           const SizedBox(
-            height: 32.0,
+            height: 15.0,
           ),
           const ColorsListView(),
+          const SizedBox(
+            height: 15.0,
+          ),
+
           BlocBuilder<AddNoteCubit, AddNoteState>(
             builder: (context, state) {
               return CustomButton(
